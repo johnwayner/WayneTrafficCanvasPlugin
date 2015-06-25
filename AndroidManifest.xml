@@ -8,7 +8,10 @@
             <intent-filter>
                 <action android:name="com.pennas.pebblecanvas.plugin.REQUEST_DEFINITIONS">
                     <action android:name="com.pennas.pebblecanvas.plugin.REQUEST_UPDATE">
-                    </action></action>
+                    </action>
+                </action>
+                <action android:name="com.johnwayner.plugins.WayneTrafficCanvasApplication.TRAFFIC_UPDATE">
+                </action>
             </intent-filter>
         </receiver>
     </application>
