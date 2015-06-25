@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.util.Log;
 import com.pennas.pebblecanvas.plugin.PebbleCanvasPlugin;
 
 import java.io.IOException;
@@ -55,13 +54,11 @@ public class WayneTrafficCanvasPlugin extends PebbleCanvasPlugin {
 
         AlarmManager alarmManager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 5000, 5 * 60 * 1000,  pendingIntent);
-        Log.e("FUCKER", "FUCKER");
     }
     
     @Override
     public void onReceive(Context context, Intent intent) {
         if(intent.getAction().equals(UPDATE_TRAFFIC_ACTION_NAME)) {
-            Log.e("FUCKER", "BLAH");
             lastUpdateDate = new Date();
             for(RouteInformation routeInformation : currentTraffic.values()) {
                 try {
